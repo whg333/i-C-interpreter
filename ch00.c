@@ -4,6 +4,7 @@
 #include <memory.h>
 #include <string.h>
 
+/*
 int token;              //当前读取的token字符
 char *src, *old_src;    //指向读取文件内容的指针
 int poolsize;           //默认分配的内存大小byte
@@ -61,3 +62,4 @@ void expression(int level){
 int eval(){
     return 0;
 }
+*/
