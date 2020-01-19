@@ -1,32 +1,13 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
 #include <string.h>
 
-int token;
-char *src, *old_src;
-int poolsize;
-int line;
-
-void next(){
-    token = *src++;
-}
-
-void expression(int level){
-    //do nothing
-}
-
-void program(){
-    next();
-    while(token > 0){
-        printf("token is: %c\n", token);
-        next();
-    }
-}
-
-int eval(){
-    return 0;
-}
+int token;              //当前读取的token字符
+char *src, *old_src;    //指向读取文件内容的指针
+int poolsize;           //默认分配的内存大小byte
+int line;               //行数
 
 int main(int argc, char **argv){
     int i, fd;
@@ -54,10 +35,29 @@ int main(int argc, char **argv){
         return -1;
     }
 
-    src[i] = 0; //�������һ���ַ�Ϊ0��־����
+    src[i] = 0; //设置最后一个字符为0代表结束，program函数执行的时候判断
     close(fd);
-
 
     program();
     return eval();
+}
+
+void program(){
+    next();
+    while(token > 0){
+        printf("token is: %c\n", token);
+        next();
+    }
+}
+
+void next(){
+    token = *src++;
+}
+
+void expression(int level){
+    //do nothing
+}
+
+int eval(){
+    return 0;
 }
