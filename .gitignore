@@ -75,3 +75,7 @@ node_modules
 #//////////////////////////
 bin/
 obj/
+
+*.cbp
+*.depend
+*.layout
