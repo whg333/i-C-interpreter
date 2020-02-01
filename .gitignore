@@ -78,6 +78,10 @@ obj/
 
 *.cbp
 *.depend
+<<<<<<< HEAD
 *.layout
 
 .project
+=======
+*.layout
+>>>>>>> branch 'master' of https://github.com/whg333/i-C-interpreter
